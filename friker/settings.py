@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Key genetaded aleatory to encript passwords os users in the database
 SECRET_KEY = '+$fcuta#4m0%lj5$w6hz-k6nhos-d)u&))8d^h)h0jvl+^5v9m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -29,7 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Very important, we have to introduce our apps here!!
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+
+# Middleware apps
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,8 +52,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# the root of the archive whit our urls
 ROOT_URLCONF = 'friker.urls'
 
+# Template engine definition, we could chage it
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,6 +72,7 @@ TEMPLATES = [
     },
 ]
 
+# To ccache our code in produccion enviroment
 WSGI_APPLICATION = 'friker.wsgi.application'
 
 
@@ -83,7 +89,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
+## Diferent validators of the passwords
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

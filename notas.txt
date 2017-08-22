@@ -1,0 +1,6 @@
+
+# To initialize database in the console we put this command
+python manage.py migrate  
+
+# To run de server we put
+python manage.py runserver
