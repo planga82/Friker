@@ -1,0 +1,5 @@
+cd "Ruta del proyecto"
+mkdir env
+virtualenv env
+env\Scripts\activate
+pip install django
