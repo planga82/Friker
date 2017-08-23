@@ -24,4 +24,32 @@ ORM y django
 	OneToOneField, OneToManyField, ManyToManyField, ForeingKey, 
 	PrimaryKey --> new Field with the id
 	
+templates
+	To include templates we have to create a folder named templates witch is going to include the templates
+	To avoid namespace problems, in the template folder we maust to crate a subfolder with the name of de aplication
+	the templates always have access to the object user, we dont have to pass it in the context
+	
+doing something like this, django only get the 2 elements of the list (lazy instantiation)
+	photos = photo.objects.all()
+    context = {
+        'photos_list':photos[:2]
+    }
+Is a way to see all sql that django is doing 
+# Log all SQL queries in debug  --> see example in settings.py
+
+photo.objects.all().order_by('-created_at')  get the photos order by date creation, descendent
+
+
+visibility = models.CharField(max_length=3, choices=VISIBILITY)
+in this case, visibility could be a tuple or a list of lists
+
+VISIBILITY = (
+    (PUBLIC, 'Publica'),
+    (PRIVATE, 'Privada')
+)
+
+VISIBILITY = [
+    [PUBLIC, 'Publica'],
+    [PRIVATE, 'Privada']
+]
 	
