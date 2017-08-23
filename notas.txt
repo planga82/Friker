@@ -4,3 +4,24 @@ python manage.py migrate
 
 # To run de server we put
 python manage.py runserver
+
+# To create the firs app
+python manage.py startapp <appname>
+# And now modify settings.py to modify INSTALLED_APPS
+
+# Add to views.py our function thar recieve an httprequesst and return an httpresponse
+# Now add it to yrls.py associated with the corresponding url
+r'' --> indicate a regular expresion (for the urls or other things)
+
+HttpRequest
+	Atributte GET with get parameters
+	Atributte POST with post parameters
+	Atributte user --> Autenticated user or anonimous user
+
+ORM y django
+	Extends fromModel and Field
+	__unicode__ --> This is like toString in Java
+	OneToOneField, OneToManyField, ManyToManyField, ForeingKey, 
+	PrimaryKey --> new Field with the id
+	
+	
