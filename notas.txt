@@ -23,7 +23,16 @@ ORM y django
 	__unicode__ --> This is like toString in Java
 	OneToOneField, OneToManyField, ManyToManyField, ForeingKey, 
 	PrimaryKey --> new Field with the id
+
+When we change anything in our data model we have to do a migration. 2 steps
+	Create migration scripts --> python manahe.py makemigrations --> We could change the migrations scripts (in migrations folder of our application) if we need
+	We could see the SQL of the command if we need with this command --> python manage.py sqlmigrate <appname> <migration_version>
+	Make Migration --> python manage.py migrate --> Execute all migrations generated in order. It point witch migratons have done
 	
+Administration
+	First we have to register our app --> admin.py --> admin.site.register(photo)
+	Create a super user --> python manage.py createsuperuser
+
 templates
 	To include templates we have to create a folder named templates witch is going to include the templates
 	To avoid namespace problems, in the template folder we maust to crate a subfolder with the name of de aplication
