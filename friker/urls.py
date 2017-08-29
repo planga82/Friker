@@ -24,6 +24,7 @@ urlpatterns = [
     #Photos urls
     url(r'^$', photoviews.home,name='photos_home'),
     url(r'^photos/(?P<pk>[0-9]+)$', photoviews.detail, name='photo_detail'),
+    url(r'^photos/new$', photoviews.create, name='create_photo'),
 
     #Users Urls
     url(r'^login$', view=userviews.login1 , name='user_login', ),

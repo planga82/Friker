@@ -61,4 +61,19 @@ VISIBILITY = [
     [PUBLIC, 'Publica'],
     [PRIVATE, 'Privada']
 ]
+
+<form method="post">  --> the parameters dont go in the url
+	{% csrf_token %}  --> For security
+	
+django the errors 500 (internal server error) sends you an email in production mode
+
+never use [] to access a dictionary, use the method get
+
+django forms
+	Normalize data 
+	flow in data forms
+	LoginForm(request.POST) --> clean data and control the flow
+	If the form fail, the form mantain all the data n the form
+django ModelForm
+	creating a form from a model
 	

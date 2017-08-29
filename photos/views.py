@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
+from photos.forms import PhotoForm
 
 from photos.models import photo, PUBLIC
 
@@ -31,4 +32,14 @@ def detail(request, pk):
     else:
         return HttpResponseNotFound('No existe la foto')
 
-
+def create(request):
+    """
+    Muestra un formulario para crear la foto
+    :param request:
+    :return:
+    """
+    form = PhotoForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'photos/new_photo.html', context)
